@@ -1,0 +1,207 @@
+{% extends 'index.html' %}
+
+{% block title %}YCF - Your Choise Food{% endblock title %}
+
+{% block body %}
+
+<style>
+    .form-control {
+        border-color: transparent;
+    }
+
+    .input-group>.form-control:focus {
+        border-color: transparent;
+        box-shadow: inset 0 0 0 1px transparent;
+    }
+</style>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <div class="card mb-2"
+                style="border-radius: 10em; background: linear-gradient(to right, #000000, #848185);">
+                <div class="card-body p-2">
+                    <div class="input-group input-group-lg">
+                        <input type="text" class="form-control form-control-lg bg-transparent text-white"
+                            placeholder="Search your favourite item(s)" aria-describedby="basic-addon2" />
+                        <span class="input-group-text border-0" id="basic-addon2">
+                            <button style="border: none; background-color: transparent;">
+                                <a href="search" style="text-decoration: none; color: #bcb9bd;">Search</a>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 overflow-x-scroll">
+    <div class="text-center fs-4 fw-bold mb-3" style="color: black;"> SELECT BY CATEGORY </div>
+    <div class="row">
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/abff6243788737.57fcec1ef2c64.jpg"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.637);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Soft Drinks
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="https://c.wallhere.com/photos/61/ed/1920x1200_px_food_lunch_Pizza-1296101.jpg!d"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+
+                            <div style="color: whitesmoke;
+                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">
+                                Pizza & more
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://wallpapercave.com/wp/wp4056273.jpg" class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Burger & Fries
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://www.hakkahousemilton.ca/wp-content/uploads/2021/01/momo-banner.jpg"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Mo:mo's
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://images.pexels.com/photos/12842265/pexels-photo-12842265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Mo:mo's
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!----------------------- Our Recommendation ------------------>
+
+<div class="container mt-5">
+    <div class="text-left fs-4 fw-bold mb-3 text-uppercase" style="color: black;"> Our Recommendation </div>
+    <div class="row">
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/abff6243788737.57fcec1ef2c64.jpg"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.637);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Soft Drinks
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="https://c.wallhere.com/photos/61/ed/1920x1200_px_food_lunch_Pizza-1296101.jpg!d"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+
+                            <div style="color: whitesmoke;
+                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">
+                                Pizza & more
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://wallpapercave.com/wp/wp4056273.jpg" class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Burger & Fries
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://www.hakkahousemilton.ca/wp-content/uploads/2021/01/momo-banner.jpg"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Mo:mo's
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

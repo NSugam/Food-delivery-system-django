@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>{% block title %} {% endblock title %}</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="{% static 'img/mdb-favicon.ico' %} " type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
+</head>
+
+<style>
+  body {
+    background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?w=2000');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+
+<body>
+  <!-- Start your project here-->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light {% block navbarstyle %} {% endblock navbarstyle %}">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <!-- <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" />
+        </a> -->
+        <!-- Left links -->
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        {% block cart_icon %}
+        <a class="text-reset me-3" href="/carts">
+          <i class="fas fa-shopping-cart fa-lg"></i>
+          <span class="badge rounded-pill badge-notification bg-danger">{{cart_list_count}}</span>
+        </a>
+        {% endblock cart_icon %}
+        <!-- Avatar -->
+
+        {% if user.is_authenticated %}
+
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+            role="button" data-mdb-toggle="dropdown" data-mdb-dropdown-animation="off" aria-expanded="false">
+            <!-- <label class="me-2">{{request.user.first_name}}</label> -->
+            <img src="https://media.licdn.com/dms/image/D5603AQHi1mJaWD6v8A/profile-displayphoto-shrink_800_800/0/1676056236058?e=1683158400&v=beta&t=eOUsRj8pVdLeBKZJhQi4A43wtIXJL2V2hszmgyx_reI" class="rounded-circle" height="35" />
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li><h6 class="dropdown-header">{{request.user.username}}</h6></li>
+            <li>
+              <a class="dropdown-item" href="#">Profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">My Address</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Order History</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Account Settings</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="/logout" style="color: red;">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% else %}
+      {% block loginbutton %}
+        <a href="/login"><button type="button" class="btn btn-dark me-3" href="/login"> Login/ Signup </button></a> 
+      {% endblock loginbutton %}
+      
+      {% endif %}
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  {% block body %} {% endblock body %}
+  <!-- End your project here-->
+
+
+  <!-- MDB -->
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %} "></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript"></script>
+</body>
+
+</html>

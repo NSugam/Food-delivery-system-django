@@ -1,0 +1,296 @@
+{% extends 'index.html' %}
+
+{% block title %}YCF - Your Choise Food{% endblock title %}
+
+{% block navbarstyle %} fixed-top {% endblock navbarstyle %}
+
+{% block body %}
+
+<style>
+    .form-control {
+        border-color: transparent;
+    }
+
+    .input-group>.form-control:focus {
+        border-color: transparent;
+        box-shadow: inset 0 0 0 1px transparent;
+    }
+
+    .checked {
+        color: orange;
+    }
+</style>
+
+<!-- Font Awesome Star Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</style>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-5">
+            <div class="card mb-2"
+                style="border-radius: 10em; background: linear-gradient(to right, #ffffff, #ffffff);">
+                <div class="card-body p-2">
+                    <div class="input-group input-group-lg">
+                        <input type="text" style="color:#000000 !important;"
+                            class="form-control form-control-lg bg-transparent text-white"
+                            placeholder="Search your favourite item(s)" aria-describedby="basic-addon2" />
+                        <span class="input-group-text border-0" id="basic-addon2">
+                            <button style="border: none; background-color: transparent;">
+                                <a href="search" style="text-decoration: none; color: #000000;">Search</a>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if messages %}
+    <div class="alert alert-primary mb-0 alert-dismissible alert-absolute fade show justify-content-center"
+        id="alertExample" role="alert" data-mdb-color="secondary">
+        <i class="fas fa-check me-2"></i>
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        <!-- <a href="#" class="alert-link me-1">Go to cart</a> -->
+        <button type="button" class="btn-close ms-2" data-mdb-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+
+</div>
+
+<div class="container mt-5">
+    <div class="text-center fs-4 fw-bold mb-3" style="color: black;"> SELECT BY CATEGORY </div>
+    <div class="row">
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/abff6243788737.57fcec1ef2c64.jpg"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.637);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Soft Drinks
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="https://c.wallhere.com/photos/61/ed/1920x1200_px_food_lunch_Pizza-1296101.jpg!d"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+
+                            <div style="color: whitesmoke;
+                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">
+                                Pizza & more
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://wallpapercave.com/wp/wp4056273.jpg" class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Burger & Fries
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://www.hakkahousemilton.ca/wp-content/uploads/2021/01/momo-banner.jpg"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Mo:mo's
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100 text-center">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                    <img src="https://images.pexels.com/photos/12842265/pexels-photo-12842265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold">Biryani's
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--------------- Order from you favourite brand ----------------->
+
+<div class="container mt-5">
+    <div class="text-left fs-3 mb-3 fw-bold" style="color: black;"> Order from you favourite brand </div>
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-sm-2 mb-3">
+            <div class="card text-center rounded-circle bg-image hover-overlay ripple"
+                style="width: 160px; height: 150px;">
+                <div class="bg-image hover-overlay ripple rounded-circle" data-mdb-ripple-color="light">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/KFC_logo.svg/1200px-KFC_logo.svg.png"
+                        height="150px" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold rounded-circle">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2 mb-3">
+            <div class="card text-center rounded-circle" style="width: 160px; height: 150px;">
+                <div class="bg-image hover-overlay ripple rounded-circle" data-mdb-ripple-color="light">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/1200px-Dominos_pizza_logo.svg.png"
+                        height="150px" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold rounded-circle">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2 mb-3">
+            <div class="card text-center rounded-circle" style="width: 160px; height: 150px;">
+                <div class="bg-image hover-overlay ripple rounded-circle" data-mdb-ripple-color="light">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Burger_King_1994_logo.png/1024px-Burger_King_1994_logo.png"
+                        height="150px" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold rounded-circle">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2 mb-3">
+            <div class="card text-center rounded-circle" style="width: 160px; height: 150px;">
+                <div class="bg-image hover-overlay ripple rounded-circle" data-mdb-ripple-color="light">
+                    <img src="https://seeklogo.com/images/M/mcdonald-s-logo-255A7B5646-seeklogo.com.png"
+                        height="150px" />
+                    <a href="#!">
+                        <div class="mask" style=" background-color: rgba(0, 0, 0, 0.493);">
+                            <div style="color: whitesmoke;
+                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+                                class="fs-4 my-5 fw-bold rounded-circle">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--------------------- Our Recommendation ---------------------->
+
+<div class="container mt-5">
+    <div class="text-left fs-4 mb-3 fw-bold" style="color: black;"> Our Recommendation </div>
+    <div class="row d-flex justify-content-left">
+        {% for i in food_list %}
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100" style="max-width: 250px;">
+                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                    <img class="img" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/5.jpg"
+                        height="150px" width="250px" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgb(0, 0, 0, 0.493);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">{{i.food_name}}</h5>
+
+                    <div><span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span><BR>
+                        {{i.restor_id}}, Banglore
+                    </div>
+                    {% if i.food_type == '100% Veg' %}
+                    <p class="text-muted mb-0 mt-1"
+                        style="background-color: green; color: white !important; border-radius: 10px; padding-left: 10px;">
+                        {{ i.food_type}} item</p>
+                    {% elif i.food_type == 'Non Veg' %}
+                    <p class="text-muted mb-0 mt-1"
+                        style="background-color: red; color: white !important; border-radius: 10px; padding-left: 10px;">
+                        {{ i.food_type}} item</p>
+                    {% else %} 
+                    <p class="text-muted mb-0 mt-1"
+                        style="background-color: yellowgreen; color: white !important; border-radius: 10px; padding-left: 10px;">
+                        {{ i.food_type}}</p> 
+                    {% endif %}
+
+                    <form action="/addtocart" method="POST"> {% csrf_token %}
+                        <p class="card-text"><i class="far fa-clock pe-2 mt-2"></i>{{ i.delivery_time}} minutes or
+                            free<BR>
+                            <i class="fas fa-shopping-cart mt-2 pe-1"></i>
+                            Quantity: <select class="border-0 m-0" name="quantity">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                            </select>
+                        </p>
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-between">Rs. {{ i.food_price}}
+                    <button class="btn btn-link link-danger p-md-1 my-0" type="submit" name='food_id'
+                        value="{{i.food_id}}">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock body %}

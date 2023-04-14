@@ -1,0 +1,108 @@
+{% extends 'index.html' %}
+
+{% block title %}Cart - YCF{% endblock title %}
+
+{% block navbarstyle %} bg-transparent {% endblock navbarstyle %}
+
+{% block cart_icon %} {% endblock cart_icon %}
+
+{% block body %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li class="list-group-item border-0 text-center" style="color: orange;"> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div class="container mt-2">
+    <div class="container p-md-4">
+        <div class="row">
+
+            <div class="col-sm-3">
+                <div class="card overflow-auto" style="height: 220px !important;">
+                    <div class="card-body">
+                        <h5 class="card-title">Cart Details</h5>
+                        <p class="card-text text-muted">{{cart_list_count}} item(s)<BR>
+                            {% for i in cart_list %}
+                                    {{i.food_name}} x 0{{i.quantity}}: {{i.food_price}}<BR>
+                            {% endfor %}
+                            Total: Rs. {{i.food_price}}<BR>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card overflow-auto" style="height: 220px !important;">
+                    <div class="card-body">
+                        <h5 class="card-title">Delivery Address</h5>
+                        <p class="card-text text-muted">#132 CMRIT Gate, AECS Layout, Kundalahalli, Brookfield,
+                            Bengaluru<BR>
+                            Pincode: 560037<BR>
+                        </p>
+                        <button class="btn btn-link link-danger p-md-1 my-0">Change Address</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card text-end">
+                    <div class="card-body">
+                        <h5 class="card-title">Payment Information</h5>
+                        <p class="card-text text-muted">Choose your payment method</p>
+                        <a href="#" class="btn btn-dark" style="background-color: #002E6E;"><i class="fab">Paytm</i></a>
+                        <a href="#" class="btn btn-dark mt-2" style="background-color: purple;"><i class="fab">Phone
+                                Pay</i></a>
+                        <a href="#" class="btn btn-dark" style="background-color: #3A81F1;"><i class="fab">Google
+                                Pay</i></a>
+                        <p class="card-text text-muted mt-4">Cash on delivery not available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-left">
+        {% for i in food_details %}
+        <div class="col-sm-3 mb-3">
+            <div class="card h-100" style="max-width: 250px;">
+                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                    <img class="img" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/5.jpg"
+                        height="150px" width="250px" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgb(0, 0, 0, 0.493);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">{{i.food_name}}</h5>
+                    <p class="card-text"><i class="far fa-clock pe-2"></i>{{ i.delivery_time}} minutes or free<BR>
+                        <i class="fas fa-shopping-cart pe-2 mt-0"></i>Quantity: 0{{i.quantity}} item(s)
+                    </p>
+                    {% if i.food_type == '100% Veg' %}
+                    <p class="text-muted mb-0"
+                        style="background-color: green; color: white !important; border-radius: 10px; padding-left: 10px;">
+                        {{ i.food_type}} item</p>
+                    {% else %}
+                    <p class="text-muted mb-0"
+                        style="background-color: red; color: white !important; border-radius: 10px; padding-left: 10px;">
+                        {{ i.food_type}} item</p>
+                    {% endif %}
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-between">Rs. {{ i.food_price}}
+                    <form action="/removefromcart" method="POST"> {% csrf_token %}
+                        <button class="btn btn-link link-danger p-md-1 my-0" type="submit" name='food_id'
+                            value="{{i.food_id}}">Remove</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+{% endblock body %}
